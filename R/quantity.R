@@ -114,6 +114,8 @@ Quantity <- R6::R6Class(
     #' Print the the value and unit of the quantity
     #' @param  caption Text to prepend to the value
     printQuantityValue = function(caption) {
+
+      QuantityValue <- formatNumerics(self$value)
       if (self$unit == "") {
         private$printLine(caption, formatNumerics(self$value))
       } else {
